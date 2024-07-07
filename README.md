@@ -1,4 +1,4 @@
-# Django Blog Application
+# Django Social Website
 
 Este es el segundo proyecto del libro *Django 5 By Example: Build powerful and reliable Python web applications from scratch (English Edition)*. Este proyecto abarca los siguientes capítulos y alcances:
 
