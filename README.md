@@ -17,3 +17,8 @@ Te enseñará cómo transformar tu aplicación social en un sitio web de marcado
 Te mostrará cómo construir un sistema de seguidores para los usuarios. Completarás tu sitio web de marcadores de imágenes creando una aplicación de flujo de actividad de usuarios. Aprenderás a crear relaciones genéricas entre modelos y a optimizar QuerySets.
 
 Trabajarás con señales e implementarás desnormalización. Utilizarás Django Debug Toolbar para obtener información de depuración relevante. Finalmente, integrarás Redis en tu proyecto para contar las visualizaciones de imágenes y crearás un ranking de las imágenes más vistas con Redis.
+
+Running with runserver_plus
+```bash
+python manage.py runserver_plus --cert-file cert.crt
+```

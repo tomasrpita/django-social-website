@@ -144,3 +144,7 @@ Temporary Items
 
 # Test media files
 */media/*
+
+# SSL certificates generated for development
+cert.crt
+cert.key
