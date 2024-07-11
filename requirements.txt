@@ -2,9 +2,12 @@ requests==2.31.0
 Django~=5.0.6
 Pillow==10.3.0
 python-decouple==3.8
+
 social-auth-app-django==5.4.0
 django-extensions==3.2.3
 # Contains a debugger layer required by the RunServerPlus extension of Django Extensions
 werkzeug==3.0.2
 # Is required to use the SSL/TLS functionality of RunServerPlus (Development Server)
 pyOpenSSL==24.1.0
+
+easy-thumbnails==2.8.5

@@ -2,7 +2,13 @@
 {% block title %}{{ image.title }}{% endblock %}
 {% block content %}
   <h1>{{ image.title }}</h1>
-  <img src="{{ image.image.url }}" class="image-detail">
+  {% comment %} <img src="{{ image.image.url }}" class="image-detail"> {% endcomment %}
+  {% load thumbnail %}
+  <a href="{{ image.image.url }}">
+    {% comment %} quality=85 is the default value for the quality parameter for the  thumbnail{% endcomment %}
+    <img src="{% thumbnail image.image 300x0 %}" class="image-detail">
+  </a>
+
   {% with total_likes=image.users_like.count %}
     <div class="image-info">
       <div>
