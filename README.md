@@ -18,7 +18,78 @@ Te mostrará cómo construir un sistema de seguidores para los usuarios. Complet
 
 Trabajarás con señales e implementarás desnormalización. Utilizarás Django Debug Toolbar para obtener información de depuración relevante. Finalmente, integrarás Redis en tu proyecto para contar las visualizaciones de imágenes y crearás un ranking de las imágenes más vistas con Redis.
 
-Running with runserver_plus
-```bash
-python manage.py runserver_plus --cert-file cert.crt
-```
+## Puesta en Marcha
+
+### Instalación de Dependencias
+
+1. **Clonar el repositorio:**
+
+    ```sh
+    git clone https://github.com/tomasrpita/django-social-website.git tu-repositorio
+    cd tu-repositorio
+    ```
+
+2. **Crear un entorno virtual e instalar las dependencias de Python:** 
+
+    ```sh
+    python3 -m venv .venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+
+3. **Crear el archivo `.env` a partir del archivo de plantilla `env.template`:**
+
+    ```sh
+    cp .env.template .env
+    ```
+
+4. **Rellenar las variables de entorno en el archivo `.env`:**
+
+    ```plaintext
+    GOOGLE_OAUTH2_KEY=your-google-oauth2-key
+    GOOGLE_OAUTH2_SECRET=your-google-oauth2-secret
+    ```
+
+### Configuración de la Aplicación Django
+
+1. **Ejecutar las migraciones de la base de datos:**
+
+    ```sh
+    python ./bookmarks/manage.py migrate
+    ```
+
+2. **Crear un superusuario:**
+    
+    ```sh
+    python ./bookmarks/manage.py createsuperuser
+    ```
+
+3. **Cargar datos iniciales (si aplica):**
+    
+    ```sh
+    python ./bookmarks/manage.py loaddata fixtures/initial_data.json
+    ```
+
+### Iniciar el Servidor de Desarrollo
+
+1. **Configure el archivo de hosts para simular un entorno real:**
+
+    + En Linux o macOS, edite el archivo /etc/hosts.
+    + En Windows, edite el archivo C:\Windows\System32\Drivers\etc\hosts.
+
+    Agregue la siguiente línea al archivo:
+    
+    ```plaintext
+    127.0.0.1 mysite.com
+    ```
+
+2. **Iniciar el servidor de desarrollo de Django con SSL/TLS:**
+
+    ```sh
+    python ./bookmarks/manage.py runserver_plus --cert-file cert.crt
+    ```
+
+### Acceso a la Aplicación
+
+- La aplicación estará disponible en `http://mysite.com:8000/account`.
+- La interfaz de administración de Django estará en `http://localhost:8000/admin`.
