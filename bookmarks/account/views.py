@@ -6,7 +6,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
 
-from bookmarks.actions.models import Action
+from actions.models import Action
 
 from .forms import LoginForm, ProfileEditForm, UserEditForm, UserRegistrationForm
 from .models import Contact, Profile
@@ -42,7 +42,9 @@ def dashboard(request):
     if following_ids:
         # If user is following others, retrieve only their actions
         actions = actions.filter(user_id__in=following_ids)
-    actions = actions[:10]
+    actions = actions.select_related("user", "user__profile").prefetch_related(
+        "target"
+    )[:10]
     return render(
         request, "account/dashboard.html", {"section": "dashboard", "actions": actions}
     )
