@@ -12,3 +12,4 @@ werkzeug==3.0.2
 pyOpenSSL==24.1.0
 
 easy-thumbnails==2.8.5
+redis==5.0.4 
