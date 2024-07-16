@@ -1,0 +1,11 @@
+services:
+  cache:
+    image: redis:7.2.4
+    restart: always
+    volumes:
+      - ./data/cache:/data
+
+
+volumes:
+  cache:
+    

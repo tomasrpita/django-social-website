@@ -48,9 +48,21 @@ Trabajarás con señales e implementarás desnormalización. Utilizarás Django 
     ```plaintext
     GOOGLE_OAUTH2_KEY=your-google-oauth2-key
     GOOGLE_OAUTH2_SECRET=your-google-oauth2-secret
+
+    REDIS_HOST=localhost
+    REDIS_PORT=6379
+    REDIS_DB=0
     ```
 
 ### Configuración de la Aplicación Django
+
+### Configuración de Docker
+
+1. **Iniciar los servicios con Docker Compose:**
+
+    ```sh
+    docker-compose up -d
+    ```
 
 1. **Ejecutar las migraciones de la base de datos:**
 
