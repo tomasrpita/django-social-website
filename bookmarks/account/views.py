@@ -61,7 +61,8 @@ def register(request):
             # Save the User object
             new_user.save()
             # Create the user profile
-            Profile.objects.create(user=new_user)
+            # Now using signals to create the profile
+            # Profile.objects.create(user=new_user)
             create_action(new_user, "has created an account")
             return render(request, "account/register_done.html", {"new_user": new_user})
     else:
