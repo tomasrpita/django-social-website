@@ -20,6 +20,10 @@ Trabajarás con señales e implementarás desnormalización. Utilizarás Django 
 
 ## Puesta en Marcha
 
+### Prerrequisitos
+
+Asegúrate de tener Docker y Docker Compose instalados en tu sistema.
+
 ### Instalación de Dependencias
 
 1. **Clonar el repositorio:**
